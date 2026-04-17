@@ -9,32 +9,45 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: #f4f4f4;
+            background: linear-gradient(to right, #e0f7fa, #f1f8e9);
+            overflow: hidden;
         }
 
         .circle {
-            width: 300px;
-            height: 300px;
-            background-color: green;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, #32cd32, #008000);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
             color: white;
-            font-size: 28px;
+            font-size: 30px;
             font-weight: bold;
             padding: 20px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.3);
-            animation: bounce 2s infinite;
+            box-shadow: 0 0 20px #32cd32, 0 0 40px #32cd32;
+            animation: bounceRotateGlow 3s infinite ease-in-out;
         }
 
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
+        @keyframes bounceRotateGlow {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                box-shadow: 0 0 20px #32cd32, 0 0 40px #32cd32;
+            }
+            25% {
+                transform: translateY(-20px) rotate(5deg) scale(1.05);
             }
             50% {
-                transform: translateY(-30px);
+                transform: translateY(-40px) rotate(0deg) scale(1.1);
+                box-shadow: 0 0 30px #7CFC00, 0 0 60px #7CFC00;
+            }
+            75% {
+                transform: translateY(-20px) rotate(-5deg) scale(1.05);
+            }
+            100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+                box-shadow: 0 0 20px #32cd32, 0 0 40px #32cd32;
             }
         }
     </style>
